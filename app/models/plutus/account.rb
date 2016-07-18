@@ -41,6 +41,14 @@ module Plutus
 
     validates_presence_of :type
 
+    TYPES = [
+      ::Plutus::Asset,
+      ::Plutus::Equity,
+      ::Plutus::Expense,
+      ::Plutus::Liability,
+      ::Plutus::Revenue,
+    ]
+
     if Plutus.enable_tenancy
       include Plutus::Tenancy
     else
