@@ -1,0 +1,16 @@
+version: '2'
+services:
+  test:
+    build: .
+    volumes_from:
+      - bundle
+    volumes:
+      - .:/app
+      - ../:/src
+  bundle:
+    image: busybox
+    volumes:
+      - /bundle
+volumes:
+  bundle:
+  src:
