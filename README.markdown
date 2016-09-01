@@ -352,6 +352,13 @@ Testing
 
 [Rspec](http://rspec.info/) tests are provided. Run `bundle install` then `rake`.
 
+Via Docker
+----------
+
+- `docker-compose build`
+- `docker-compose run test bundle`
+- `docker-compose run test bundle exec rspec`
+
 Contributing and Contributors
 =============================
 
