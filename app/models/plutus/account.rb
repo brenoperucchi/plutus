@@ -44,13 +44,15 @@ module Plutus
     validates :name, presence: true, uniqueness: { scope: [:tenant_id, :tenant_type] }
     belongs_to :tenant, polymorphic: true
 
-    TYPES = [
-      ::Plutus::Asset,
-      ::Plutus::Equity,
-      ::Plutus::Expense,
-      ::Plutus::Liability,
-      ::Plutus::Revenue,
-    ]
+    def self.types
+      [
+        ::Plutus::Asset,
+        ::Plutus::Equity,
+        ::Plutus::Expense,
+        ::Plutus::Liability,
+        ::Plutus::Revenue,
+      ]
+    end
 
     # The balance of the account. This instance method is intended for use only
     # on instances of account subclasses.

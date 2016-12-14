@@ -7,9 +7,9 @@ module Plutus
 
     it { should_not be_valid }  # must construct a child type instead
 
-    describe "TYPES" do
+    describe ".types" do
       it "lists the available types" do
-        expect(described_class::TYPES).
+        expect(described_class.types).
           to match_array([Asset, Equity, Expense, Liability, Revenue])
       end
     end
